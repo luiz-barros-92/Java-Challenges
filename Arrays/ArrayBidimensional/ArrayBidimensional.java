@@ -2,7 +2,7 @@ package arrayBidimensional;
 
 import java.util.Scanner;
 
-public class arrayBidimensional {
+public class ArrayBidimensional {
 
 	public static void main(String[] args) {
 		int [][] matriz = new int [3][3];
