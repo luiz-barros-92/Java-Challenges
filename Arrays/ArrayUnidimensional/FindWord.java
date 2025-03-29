@@ -5,18 +5,16 @@ import java.util.Scanner;
 public class FindWord {
 
 	public static void main(String[] args) {
-		System.out.print("Digite uma frase: ");		
-		Scanner frase = new Scanner(System.in);
-		String entrada = frase.nextLine();
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("Digite uma frase: ");		
+		String entrada = sc.nextLine();		
 		String[] fracionado = entrada.split(" ");		
 		
-		System.out.print("Mostrar a palavra nº: ");		
-		Scanner escolha = new Scanner(System.in);		
-		int numero = escolha.nextInt() - 1;
-
-		frase.close();
-		escolha.close();
+		System.out.print("Mostrar a palavra nº: ");				
+		int numero = sc.nextInt() - 1;	
+		
+		sc.close();
 		
 		if(numero >= 0 && numero < fracionado.length) {
 			System.out.println("A palavra nº " + (numero + 1) + " é: " + fracionado[numero]);
