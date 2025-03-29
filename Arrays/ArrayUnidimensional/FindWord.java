@@ -14,14 +14,14 @@ public class FindWord {
 		System.out.print("Mostrar a palavra nº: ");		
 		Scanner escolha = new Scanner(System.in);		
 		int numero = escolha.nextInt() - 1;
+
+		frase.close();
+		escolha.close();
 		
 		if(numero >= 0 && numero < fracionado.length) {
 			System.out.println("A palavra nº " + (numero + 1) + " é: " + fracionado[numero]);
 		} else {
 			System.out.println("A frase possui " + fracionado.length + " palavras! Digite um número entre 1 e " + fracionado.length);
-		}	
-		
-		frase.close();
-		escolha.close();
+		}		
 	}
 }
