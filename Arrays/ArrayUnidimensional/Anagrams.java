@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Anagrams {
 
 	public static void main(String[] args) {
-		System.out.println("--Verifique se duas papalvras são anagramas--");
+		System.out.println("--Verifique se duas palvras são anagramas--");
 		
 		Scanner sc = new Scanner(System.in);
 		
