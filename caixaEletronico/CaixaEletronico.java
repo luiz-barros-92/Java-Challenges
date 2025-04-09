@@ -9,8 +9,8 @@ public class CaixaEletronico {
     public CaixaEletronico() {
         this.clientes = new HashMap<>();
         
-        clientes.put("123", new Cliente("123", "senha123", 1000.0));
-        clientes.put("456", new Cliente("456", "senha456", 500.0));
+        clientes.put("123", new Cliente("Adriana", "123", "senha123", 1000.0));
+        clientes.put("456", new Cliente("Anselmo", "456", "senha456", 500.0));
     }
 
     public Cliente getCliente(String conta) {

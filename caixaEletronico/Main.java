@@ -23,7 +23,7 @@ public class Main {
 		Cliente cliente = caixa.getCliente(conta);
 		
 		if (cliente != null && cliente.getSenha().equals(senha)) {
-			System.out.println("Bem vindo à sua conta!");			
+			System.out.println("Bem vindo(a) à sua conta, " + cliente.getNome() + "!");			
 		} else {
 			System.out.println("Acesso Negado!");
 		}		
