@@ -16,14 +16,43 @@ public class Main {
 		String conta = sc.nextLine();
 		
 		System.out.print("Senha: ");
-		String senha = sc.nextLine();
-		
-		sc.close();	
+		String senha = sc.nextLine();		
 		
 		Cliente cliente = caixa.getCliente(conta);
 		
 		if (cliente != null && cliente.getSenha().equals(senha)) {
-			System.out.println("Bem vindo(a) à sua conta, " + cliente.getNome() + "!");			
+			System.out.println("Bem vindo(a) à sua conta, " + cliente.getNome() + "!");
+			System.out.println("----Menu----");
+			
+			int acao;
+			
+			do {
+				System.out.println("\n[1]Depositar\n[2]Sacar\n[3]Verificar o Saldo\n[0]Sair");
+				System.out.print("\nQual ação deseja executar? ");				
+				
+				acao = sc.nextInt();				
+				
+				switch (acao) {
+					case 1:
+						 System.out.print("Qual valor você deseja depositar? R$");
+					     double deposito = sc.nextDouble();
+					     cliente.depositar(deposito);
+					     System.out.println("R$" + deposito + " depositado com sucesso!");
+					     break;
+					case 2:
+						//TODO programar o acesso ao método de saque da classe cliente
+						//System.out.println("Qual valor você deseja sacar? R$");
+						//break;
+					case 3:
+						//TODO construir um status para classe cliente (saldo)
+					default:
+		                System.out.println("Opção inválida. Tente novamente.");
+				}
+				
+			} while (acao != 0);			
+			
+			sc.close();
+			
 		} else {
 			System.out.println("Acesso Negado!");
 		}		
