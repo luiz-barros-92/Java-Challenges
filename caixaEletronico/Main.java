@@ -21,13 +21,13 @@ public class Main {
 		Cliente cliente = caixa.getCliente(conta);
 		
 		if (cliente != null && cliente.getSenha().equals(senha)) {
-			System.out.println("Bem vindo(a) à sua conta, " + cliente.getNome() + "!\n");
-			System.out.println("------Menu------");
+			System.out.println("Bem vindo(a) à sua conta, " + cliente.getNome() + "!");			
 			
 			int acao;
 			
 			do {
-				System.out.println("\n[1]Depositar\n[2]Sacar\n[3]Verificar o Saldo\n[0]Sair");
+				System.out.println("\n------Menu------");
+				System.out.println("[1]Depositar\n[2]Sacar\n[3]Verificar o Saldo\n[0]Sair");
 				System.out.print("\nQual ação deseja executar? ");				
 				
 				acao = sc.nextInt();				
@@ -38,13 +38,21 @@ public class Main {
 					     double deposito = sc.nextDouble();
 					     cliente.depositar(deposito);					     
 					     break;
+					     
 					case 2:
-						System.out.println("Qual valor você deseja sacar? R$");
+						System.out.print("Qual valor você deseja sacar? R$");
 						double saque = sc.nextDouble();
 						cliente.sacar(saque);												
 						break;
-					case 3:
-						//TODO construir um status para classe cliente (saldo)
+						
+					case 3:						
+						cliente.verificarSaldo();
+						break;
+						
+					case 0:
+						System.out.println("Volte sempre, " + cliente.getNome() + "!");
+						break;
+						
 					default:
 		                System.out.println("Opção inválida. Tente novamente.");
 				}
