@@ -35,20 +35,20 @@ public class Cliente {
     
     public void depositar(double valor) {
 	    this.setSaldo(this.getSaldo() + valor);
-	    System.out.println("\nR$" + valor + " depositado com sucesso!");
+	    System.out.println(String.format("\nR$%.2f depositado com sucesso!", valor));
 	}
 	
 	public void sacar(double valor) {
 	    if (this.getSaldo() >= valor){
 	        this.setSaldo(this.getSaldo() - valor);
-	        System.out.println("\nR$" + valor + " sacado com sucesso!");
+	        System.out.println(String.format("\nR$%.2f sacado com sucesso!", valor));
 	    } else {
 	        System.out.println("\nSaldo indisponível");
 	    }
 	}
 	
 	public void verificarSaldo() {
-		System.out.println("\nSaldo atual: R$" + this.getSaldo());
+		System.out.println(String.format("\nSaldo atual: R$%.2f", this.getSaldo()));
 	}
 }
 
