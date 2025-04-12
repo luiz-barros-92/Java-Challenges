@@ -35,11 +35,13 @@ public class Cliente {
     
     public void depositar(double valor) {
 	    this.setSaldo(this.getSaldo() + valor);
+	    System.out.println("R$" + valor + " depositado com sucesso!");
 	}
 	
 	public void sacar(double valor) {
 	    if (this.getSaldo() >= valor){
 	        this.setSaldo(this.getSaldo() - valor);
+	        System.out.println("R$" + valor + " sacado com sucesso!");
 	    } else {
 	        System.out.println("Saldo indisponível");
 	    }

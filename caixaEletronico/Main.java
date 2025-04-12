@@ -21,8 +21,8 @@ public class Main {
 		Cliente cliente = caixa.getCliente(conta);
 		
 		if (cliente != null && cliente.getSenha().equals(senha)) {
-			System.out.println("Bem vindo(a) à sua conta, " + cliente.getNome() + "!");
-			System.out.println("----Menu----");
+			System.out.println("Bem vindo(a) à sua conta, " + cliente.getNome() + "!\n");
+			System.out.println("------Menu------");
 			
 			int acao;
 			
@@ -36,13 +36,13 @@ public class Main {
 					case 1:
 						 System.out.print("Qual valor você deseja depositar? R$");
 					     double deposito = sc.nextDouble();
-					     cliente.depositar(deposito);
-					     System.out.println("R$" + deposito + " depositado com sucesso!");
+					     cliente.depositar(deposito);					     
 					     break;
 					case 2:
-						//TODO programar o acesso ao método de saque da classe cliente
-						//System.out.println("Qual valor você deseja sacar? R$");
-						//break;
+						System.out.println("Qual valor você deseja sacar? R$");
+						double saque = sc.nextDouble();
+						cliente.sacar(saque);												
+						break;
 					case 3:
 						//TODO construir um status para classe cliente (saldo)
 					default:
