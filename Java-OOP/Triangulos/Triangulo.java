@@ -1,7 +1,7 @@
 package triangulos;
 
 public class Triangulo {
-	private float lado1;
+    private float lado1;
     private float lado2;
     private float lado3;
     
