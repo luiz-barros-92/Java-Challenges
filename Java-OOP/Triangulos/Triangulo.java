@@ -1,4 +1,4 @@
-package triangulo;
+package triangulos;
 
 public class Triangulo {
 	private float lado1;
@@ -21,6 +21,13 @@ public class Triangulo {
         return lado3;
     }
     
+    public float calcularArea(){
+        float p = (this.getLado1() + this.getLado2() + this.getLado3()) / 2;
+        
+        float area = (float) Math.sqrt(p * ((p - this.getLado1()) * (p - this.getLado2()) * (p - this.getLado3())));
+        
+        return area;
+    }
     
 }
 
