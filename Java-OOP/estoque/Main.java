@@ -20,8 +20,18 @@ public class Main {
 		
 		Product p1 = new Product(name, price, qty);
 		
-		//TODO função para mostrar na tela os valores e estoque do produto
-		//TODO adicionar função de pedir ao cliente para adicionar itens ao estoque
+		p1.totalValueInStock();
+		
+		System.out.print("Enter the number of products to be added in stock: ");
+		int add = sc.nextInt();
+		
+		p1.addProducts(add);
+		
+		System.out.print("Enter the number of products to be removed from stock: ");
+		int rmv = sc.nextInt();
+		
+		p1.removeProducts(rmv);
+		
 		
 		sc.close();
 		
