@@ -38,15 +38,15 @@ public class Product {
 	public double TotalValueInStock() {
 		double totalValue = this.getQuantity();
 		System.out.println("----" + this.getName() + "----");
-	    System.out.println("Estoque total: " + totalValue + " un.");
-	    return totalValue;
+		System.out.println("Estoque total: " + totalValue + " un.");
+		return totalValue;
 	}
 	
 	public void addProducts(int quantity) {
-	    this.quantity += quantity;
+		this.quantity += quantity;
 	}
 	
 	public void removeProducts(int quantity) {
-	    this.quantity -= quantity;
+		this.quantity -= quantity;
 	}	
 }
