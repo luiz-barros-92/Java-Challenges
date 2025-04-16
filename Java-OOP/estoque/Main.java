@@ -1,12 +1,26 @@
 package estoque;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Product p1 = new Product("Alcool", 25.0, 1);		
+		Scanner sc = new Scanner(System.in);
 		
-		p1.addProducts(5);
-		p1.removeProducts(6);
-		p1.TotalValueInStock();
+		System.out.println("Enter product data: ");
+		
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		
+		System.out.print("Quantity in stock: ");
+		int qty = sc.nextInt();
+		
+		Product p1 = new Product(name, price, qty);
+		
+		sc.close();
+		
 	}
 }
