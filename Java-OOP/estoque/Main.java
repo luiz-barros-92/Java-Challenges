@@ -20,6 +20,9 @@ public class Main {
 		
 		Product p1 = new Product(name, price, qty);
 		
+		//TODO função para mostrar na tela os valores e estoque do produto
+		//TODO adicionar função de pedir ao cliente para adicionar itens ao estoque
+		
 		sc.close();
 		
 	}
