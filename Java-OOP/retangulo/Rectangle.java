@@ -22,12 +22,13 @@ public class Rectangle {
 		return area;
 	}
 	
-	/*public double perimeter() {		
-		//TODO calcular perimetro		
+	public double perimeter() {		
+		double perimeter = 2 * (this.width + this.height);
+		return perimeter;
 	}
 	
 	public double diagonal() {
-		//TODO calcular diagonal
-	}*/	
-
+		double diagonal = Math.sqrt(Math.pow(this.width, 2) + (Math.pow(this.height, 2)));
+		return diagonal;
+	}
 }
