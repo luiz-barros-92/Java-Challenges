@@ -35,19 +35,23 @@ public class Product {
 		this.quantity = quantity;
 	}
 	
-	public double totalValueInStock() {
-		double sum = this.getPrice() * this.getQuantity();
-		System.out.printf("Product data: %s, $ %.2f, %d units, Total: $ %.2f%n", this.getName(), this.getPrice(), this.getQuantity(), sum);
-		return sum;
+	private void printProductData(String message) {
+		double total = this.getPrice() * this.getQuantity();
+		System.out.printf("%s: %s, $ %.2f, %d units, Total: $ %.2f%n", message, this.getName(), this.getPrice(), this.getQuantity(), total);
 	}
+	
+	public double totalValueInStock() {
+		printProductData("Product data");		
+		return this.getPrice() * this.getQuantity();
+	}
+	
 	public void addProducts(int quantity) {
 		this.quantity += quantity;
-		double sum = this.getPrice() * this.getQuantity();
-		System.out.printf("Updated data: %s, $ %.2f, %d units, Total: $ %.2f%n", this.getName(), this.getPrice(), this.getQuantity(), sum);
+		printProductData("Updated data");
 	}
+	
 	public void removeProducts(int quantity) {
 		this.quantity -= quantity;
-		double sum = this.getPrice() * this.getQuantity();
-		System.out.printf("Updated data: %s, $ %.2f, %d units, Total: $ %.2f%n", this.getName(), this.getPrice(), this.getQuantity(), sum);
+		printProductData("Updated data");
 	}
 }
