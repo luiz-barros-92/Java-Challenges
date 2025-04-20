@@ -18,10 +18,9 @@ public class Student {
         double difference = 60 - finalNote;
         
         if (finalNote >= 60) {
-            System.out.println("FINAL GRADE = " + finalNote + "%nPASS");
+            System.out.println("FINAL GRADE = " + finalNote + "\nPASS");
         }else {
-            System.out.println("FINAL GRADE = " + finalNote + "%nFAILED%nMISSING " + difference + "POINTS");
+            System.out.println("FINAL GRADE = " + finalNote + "\nFAILED\nMISSING " + difference + " POINTS");
         }
-    }
-    
+    }  
 }
