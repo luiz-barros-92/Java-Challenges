@@ -19,6 +19,7 @@ public class Main {
 
 			System.out.print("Id: ");
 			int id = sc.nextInt();
+			sc.nextLine();
 
 			System.out.print("Name: ");
 			String name = sc.nextLine();
@@ -41,9 +42,12 @@ public class Main {
 		    double percentage = sc.nextDouble();
 		    emp.increaseSalary(percentage);
 		}
-
 		
-		//TODO  Finish the output
+		System.out.println("\nList of employees:");
+		for(Employee lists : list ) {
+			System.out.println(lists);
+		}		
+		
 		sc.close();
 	}
 }

@@ -29,4 +29,9 @@ public class Employee {
      public void increaseSalary(double percentage){
          this.salary += this.salary * (percentage / 100);
      }
+     
+     public String toString() {
+ 		return id + ", " + name + ", " + salary;
+ } 
+
  }
