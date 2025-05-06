@@ -24,14 +24,14 @@ public class SeveralLocalDateTime {
 		
 		//custom format
 		//https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
-	    DateTimeFormatter ft1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-	    DateTimeFormatter ft2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+	   	DateTimeFormatter ft1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	   	DateTimeFormatter ft2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 	    
-	    LocalDate dt08 = LocalDate.parse("05/05/2025", ft1); //print output: 2025-05-05
-	    LocalDateTime dt09 = LocalDateTime.parse("05/05/2025 20:05", ft2); //print output: 2025-05-05T20:05
+	   	LocalDate dt08 = LocalDate.parse("05/05/2025", ft1); //print output: 2025-05-05
+	   	LocalDateTime dt09 = LocalDateTime.parse("05/05/2025 20:05", ft2); //print output: 2025-05-05T20:05
 	    
-	    //isolated data
-	    LocalDate dt10 = LocalDate.of(2025, 5, 5); //print output: 2025-05-05
-	    LocalDateTime dt11 = LocalDateTime.of(2025, 5, 5, 20, 22); //print output: 2025-05-05T20:22
+	    	//isolated data
+	    	LocalDate dt10 = LocalDate.of(2025, 5, 5); //print output: 2025-05-05
+	    	LocalDateTime dt11 = LocalDateTime.of(2025, 5, 5, 20, 22); //print output: 2025-05-05T20:22
 	}
 }
