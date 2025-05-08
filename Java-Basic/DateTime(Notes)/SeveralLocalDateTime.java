@@ -25,7 +25,7 @@ public class SeveralLocalDateTime {
 		//https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
 	   	DateTimeFormatter ft1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	   	DateTimeFormatter ft2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-		DateTimeFormatter ft3 = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm").withZone(ZoneId.systemDefault());//captures TimeZone default from user system 
+		DateTimeFormatter ft3 = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm").withZone(ZoneId.systemDefault());//captures system's default timezone 
 	    
 	   	LocalDate dt08 = LocalDate.parse("05/05/2025", ft1); //print output: 2025-05-05
 	   	LocalDateTime dt09 = LocalDateTime.parse("05/05/2025 20:05", ft2); //print output: 2025-05-05T20:05
