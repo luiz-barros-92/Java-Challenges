@@ -1,4 +1,5 @@
 package sandBox;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -24,8 +25,18 @@ public class CalculatingDateTime {
 		LocalDateTime addDays1 = dt05.plusDays(7); //print output: 2025-05-11T20:47:42
 		LocalDateTime minusDays1 = dt05.minusDays(7); //print output: 2025-04-27T20:47:42
 		
-		//working with Instant (ChronoUnit have A LOT of units)
+		//working with Instant (ChronoUnit has A LOT of units)
 		Instant inst1 = dt06.plus(7, ChronoUnit.DAYS); //print output: 2025-05-11T20:48:40Z
 		Instant inst = dt06.minus(7, ChronoUnit.DAYS); //print output: 2025-04-27T20:48:40Z
+		
+		//calculating Duration
+		Duration d1 = Duration.between(minusDays1, dt05); //LocalDateTime	
+		System.out.println(d1.toDays()); //output: 7
+		
+		Duration d2 = Duration.between(minusDays.atStartOfDay(), dt04.atStartOfDay()); //need to add the hour of the day because it is LocalDate
+		System.out.println(d2.toDays()); //output: 7
+		
+		Duration d3 = Duration.between(inst, dt06); //Instant
+		System.out.println(d3.toDays()); //output: 7		
 	}
 }
