@@ -2,7 +2,6 @@ package entities;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import entities.enums.WorkerLevel;
 
 public class Worker {
@@ -72,6 +71,6 @@ public class Worker {
 	}
 	
 	public Double income(Integer year, Integer month) {
-		return //TODO
+		return baseSalary;//TODO
 	}
 }
