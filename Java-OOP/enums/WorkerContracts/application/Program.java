@@ -1,5 +1,8 @@
 package application;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import entities.*;
 import entities.enums.*;
@@ -12,7 +15,7 @@ public class Program {
 		System.out.print("Enter department's name: ");
 		String department = sc.nextLine();
 		Department dep = new Department(department);
-		
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");		
 		
 		System.out.println("Enter worker data:");
 		
@@ -33,7 +36,37 @@ public class Program {
 		System.out.print("Base salary: ");
 		Double baseSalary = sc.nextDouble();		
 		
-		Worker worker = new Worker(wName, wLevel, baseSalary, dep);		
+		Worker worker = new Worker(wName, wLevel, baseSalary, dep);
+		
+		System.out.print("How many contracts to this worker? ");
+		int contracts = sc.nextInt();
+		sc.nextLine();
+		
+		for(int i=0; i<contracts; i++) {
+			System.out.println("Enter the contract #" + (i+1) +"");
+			
+			LocalDate date1 = null;
+			while(date1 == null) {
+				System.out.print("Date (DD/MM/YY): ");
+				String date = sc.nextLine();
+				try {
+					date1 = LocalDate.parse(date, format);
+				} catch (DateTimeParseException e){
+					System.out.println("Invalid format. Use DD/MM/YYY:");
+				}
+			}
+			
+			System.out.print("Value per hour: ");
+			Double valuePerHour = sc.nextDouble();
+			sc.nextLine();	
+			
+			System.out.print("Duration (hours): ");
+			Integer hours = sc.nextInt();
+			sc.nextLine();
+			
+			HourContract hourContract = new HourContract(date1, valuePerHour, hours);
+			worker.addContract(hourContract);
+		}		
 		
 		sc.close();
 	}

@@ -58,19 +58,25 @@ public class Worker {
 		return contracts;
 	}
 
-	public void setContracts(List<HourContract> contracts) {
-		this.contracts = contracts;
-	}
-
 	public void addContract(HourContract contract) {
-		//TODO
+		contracts.add(contract);
 	}
 	
 	public void removeContract(HourContract contract) {
-		//TODO
+		contracts.remove(contract);
 	}
 	
 	public Double income(Integer year, Integer month) {
-		return baseSalary;//TODO
+		double sum = baseSalary;
+		
+		for (HourContract c : contracts) {
+			int c_year = c.getDate().getYear();
+			int c_month = c.getDate().getMonthValue();
+			
+			if (c_year == year  && c_month == month) {
+				sum += c.totalValue();
+			}			
+		}
+		return sum;//TODO
 	}
 }
