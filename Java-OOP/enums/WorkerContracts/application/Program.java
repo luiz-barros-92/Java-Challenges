@@ -43,7 +43,7 @@ public class Program {
 		sc.nextLine();
 		
 		for(int i=0; i<contracts; i++) {
-			System.out.println("Enter the contract #" + (i+1) +"");
+			System.out.println("Enter the contract #" + (i+1) +":");
 			
 			LocalDate date1 = null;
 			while(date1 == null) {
@@ -66,8 +66,18 @@ public class Program {
 			
 			HourContract hourContract = new HourContract(date1, valuePerHour, hours);
 			worker.addContract(hourContract);
-		}		
+		}
 		
+		System.out.print("Enter month and year to calculate income(MM/YYYY): ");
+		String[] incomeDate = sc.nextLine().split("/");
+		int month = Integer.parseInt(incomeDate[0]);
+		int year = Integer.parseInt(incomeDate[1]);
+		Double income = worker.income(month, year);
+		
+		System.out.println("Name: " + worker.getName());
+		System.out.println("Department: " + dep.getName());
+		System.out.println("Income for " + month + "/" + year + ": " + income);//TODO verify the 'income' result
+				
 		sc.close();
 	}
 }
