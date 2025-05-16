@@ -69,14 +69,14 @@ public class Program {
 		}
 		
 		System.out.print("Enter month and year to calculate income(MM/YYYY): ");
-		String[] incomeDate = sc.nextLine().split("/");
-		int month = Integer.parseInt(incomeDate[0]);
-		int year = Integer.parseInt(incomeDate[1]);
-		Double income = worker.income(month, year);
+		String incomeDate = sc.next();
+		int month = Integer.parseInt(incomeDate.substring(0, 2));
+		int year = Integer.parseInt(incomeDate.substring(3));
+		Double income = worker.income(year, month);
 		
 		System.out.println("Name: " + worker.getName());
-		System.out.println("Department: " + dep.getName());
-		System.out.println("Income for " + month + "/" + year + ": " + income);//TODO verify the 'income' result
+		System.out.println("Department: " + worker.getDepartment().getName());
+		System.out.println("Income for " + incomeDate + ": " + income);
 				
 		sc.close();
 	}
